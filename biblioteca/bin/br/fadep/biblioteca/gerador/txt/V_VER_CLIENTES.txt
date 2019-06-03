@@ -1,0 +1,15 @@
+CREATE VIEW V_VER_CLIENTES(idcliente, nome,cpf,idade,sexo,telefone,matricula,curso,tipo)
+AS
+(
+SELECT p.id AS idcliente,
+    p.nome,
+    p.cpf,
+    p.idade,
+    p.sexo,
+    p.telefone,
+    c.matricula,
+    c.curso,
+    c.tipo
+FROM pessoa p
+JOIN cliente c ON c.id = p.id
+)

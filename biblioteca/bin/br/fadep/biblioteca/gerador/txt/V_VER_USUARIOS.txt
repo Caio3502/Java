@@ -1,0 +1,13 @@
+ CREATE VIEW V_VER_USUARIOS(idusuario,login,senha,nome,cpf,idade,sexo,telefone)
+AS
+(SELECT p.id AS idusuario,
+    u.login,
+    u.senha,
+    p.nome,
+    p.cpf,
+    p.idade,
+    p.sexo,
+    p.telefone
+   FROM pessoa p
+     JOIN usuario u ON p.id = u.id
+)
